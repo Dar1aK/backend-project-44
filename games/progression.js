@@ -31,7 +31,7 @@ const progressionGame = (name) => {
     );
 
     return {
-      question: array.join(', '),
+      question: array.join(' '),
       answer: `${hiddenElement}`,
     };
   };
