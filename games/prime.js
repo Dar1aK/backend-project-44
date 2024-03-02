@@ -1,5 +1,5 @@
 import game from '../src/index.js';
-import { getRandomInt } from '../src/integer.js';
+import getRandomInt from '../src/integer.js';
 
 const isPrime = (number) => {
   for (let i = 2; i < number; i += 1) {

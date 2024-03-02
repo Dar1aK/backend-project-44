@@ -1,5 +1,5 @@
 import game from '../src/index.js';
-import { getRandomInt } from '../src/integer.js';
+import getRandomInt from '../src/integer.js';
 
 const getAnswer = (num1, num2) => {
   let min = 0;

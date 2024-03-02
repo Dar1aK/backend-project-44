@@ -1,5 +1,5 @@
 import game from '../src/index.js';
-import { getRandomInt } from '../src/integer.js';
+import getRandomInt from '../src/integer.js';
 
 const generateArray = (count, start, delta, hiddenElementPosition) => {
   const array = [];
