@@ -7,19 +7,16 @@ const OPERATORS = {
   '-': (n1, n2) => n1 - n2,
 };
 
+const getRandomOperator = () => {
+  const arrOperators = Object.keys(OPERATORS);
+  return arrOperators[Math.floor(Math.random() * arrOperators.length)];
+};
+
 const calcGame = (name) => {
-  const getNumber1 = () => getRandomInt(0, 100);
-  const getNumber2 = () => getRandomInt(0, 100);
-
-  const getOperator = () => {
-    const arrOperators = Object.keys(OPERATORS);
-    return arrOperators[Math.floor(Math.random() * arrOperators.length)];
-  };
-
   const getParams = () => {
-    const number1 = getNumber1();
-    const number2 = getNumber2();
-    const operator = getOperator();
+    const number1 = getRandomInt(0, 100);
+    const number2 = getRandomInt(0, 100);
+    const operator = getRandomOperator();
 
     return {
       question: `${number1} ${operator} ${number2}`,

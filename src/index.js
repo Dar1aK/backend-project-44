@@ -16,15 +16,16 @@ const round = (question, answer) => {
   return false;
 };
 
-const game = (name, rules, getNumber) => {
+const game = (name, rules, getAnswerAndQuestion) => {
   console.log(rules);
 
   const roundCount = 3;
 
   for (let i = 0; i < roundCount; i += 1) {
-    const { question, answer } = getNumber();
+    const { question, answer } = getAnswerAndQuestion();
     const roundResult = round(question, answer);
     if (!roundResult) {
+      console.log(`Let's try again, ${name}!`);
       return;
     }
   }
