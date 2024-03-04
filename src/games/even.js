@@ -1,7 +1,8 @@
-import game from '../src/index.js';
-import getRandomInt from '../src/integer.js';
+import getName from '../cli.js';
+import game from '../index.js';
+import getRandomInt from '../integer.js';
 
-const evenGame = (name) => {
+const evenGame = () => {
   const getParams = () => {
     const number = getRandomInt(0, 100);
 
@@ -10,6 +11,10 @@ const evenGame = (name) => {
       answer: number % 2 === 0 ? 'yes' : 'no',
     };
   };
+
+  console.log('Welcome to the Brain Games!');
+
+  const name = getName();
 
   game(
     name,

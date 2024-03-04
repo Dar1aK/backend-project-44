@@ -1,30 +1,16 @@
-import game from '../src/index.js';
-import getRandomInt from '../src/integer.js';
+import game from '../index.js';
+import getRandomInt from '../integer.js';
+import getName from '../cli.js';
 
 const getAnswer = (num1, num2) => {
-  let min = 0;
-  let max = 0;
-  if (num1 === num2) {
+  if (num2 === 0) {
     return num1;
   }
-  if (num1 < num2) {
-    min = num1;
-    max = num2;
-  } else {
-    min = num2;
-    max = num1;
-  }
 
-  for (let i = min; i >= 0; i -= 1) {
-    if (max % i === 0 && min % i === 0) {
-      return i;
-    }
-  }
-
-  return 0;
+  return getAnswer(num2, num1 % num2);
 };
 
-const gcdGame = (name) => {
+const gcdGame = () => {
   const getParams = () => {
     const number1 = getRandomInt(0, 100);
     const number2 = getRandomInt(0, 100);
@@ -34,6 +20,10 @@ const gcdGame = (name) => {
       answer: `${getAnswer(number1, number2)}`,
     };
   };
+
+  console.log('Welcome to the Brain Games!');
+
+  const name = getName();
 
   game(name, 'Find the greatest common divisor of given numbers.', getParams);
 };
