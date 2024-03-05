@@ -3,8 +3,11 @@ import getRandomInt from '../integer.js';
 import getName from '../cli.js';
 
 const isPrime = (number) => {
-  for (let i = 0; i < number; i += 1) {
-    if (number % i === 0 && i !== 1) {
+  if (number < 2) {
+    return false;
+  }
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
       return false;
     }
   }
@@ -13,7 +16,7 @@ const isPrime = (number) => {
 
 const primeGame = () => {
   const getParams = () => {
-    const number = getRandomInt(2, 100);
+    const number = getRandomInt(0, 100);
 
     return {
       question: number,
